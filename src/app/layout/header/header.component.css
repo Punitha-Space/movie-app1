@@ -1,0 +1,82 @@
+.main-header {
+  min-height: 60px;
+  padding: 12px;
+}
+.main-nav {
+  position: relative;
+  display: block;
+  height: 50px;
+}
+.main-nav .navbar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  height: 50px;
+}
+.main-nav .navbar .nav-item {
+  display: inline-flex;
+}
+.main-nav .nav-item a {
+  position: relative;
+  display: block;
+  padding: 0 12px;
+  height: 30px;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 30px;
+  color: #8e95a5;
+  cursor: pointer;
+  text-decoration: none;
+}
+.main-nav .nav-item a:hover,
+.main-nav .nav-item a.active {
+  color: #FFF;
+  background-color: #181818;
+  border-radius: 6px;
+}
+.main-nav .avatar {
+  position: relative;
+  display: flex;
+  width: 128px;
+  height: 50px;
+  align-items: center;
+}
+.main-nav .avatar img {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+  
+  
+.finder {
+  position: relative;
+  display: block;
+  padding: 10px 0;
+}
+.finder input[type="text"] {
+  display: inline-block;
+  height: 30px;
+  border: none;
+  border-bottom: 1px solid #8e95a5;
+  background: transparent;
+  color: #8e95a5;
+  width: calc(100% - 35px);
+  padding: 0 10px;
+  font-size: 14px;
+  line-height: 30px;
+  font-weight: 100;
+}
+.finder .dosearch {
+  height: 30px;
+  width: 30px;
+  border: none;
+  background: transparent;
+  color: #8e95a5;
+  cursor: pointer;
+}
+.finder .dosearch:hover {
+  color: #D41E29;
+}
+  

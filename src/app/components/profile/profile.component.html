@@ -1,0 +1,149 @@
+<!-- Profile page body -->
+<div class="container profile-container" *ngIf="profileLoaded">
+
+  <div class="row no-gutter">
+
+    <div class="col-4 col-md-3 col-sm-12">
+      <section class="panel-profile-status">
+        <button class="btn btn-secondary" *ngIf="!isEdit && !authorized" (click)="toggleEdit()">Create Profile</button>
+        <button class="btn btn-secondary" *ngIf="!isEdit && authorized" (click)="toggleEdit()">Edit Profile</button>
+        <button class="btn btn-secondary" *ngIf="isEdit" (click)="toggleEdit()">View Profile</button>
+
+        <aside class="profile-status" *ngIf="isEdit && authorized">
+          <p>
+            <a (click)="getOTP()">Click Here</a> to get OTP to edit your profile</p>
+          <div *ngIf="otpReceived" class="row otpSection">
+            <p>An OTP '{{otp.reason}}' sent to your registered mobile {{profile.mobileNumber}}</p>
+            <input class="otp-input" type="text" [(ngModel)]="otpValue" [ngModelOptions]="{standalone: true}" (ngModelChange)="validateOTp()"
+              placeholder="Enter OTP" />
+          </div>
+        </aside>
+        <aside class="profile-status" *ngIf="!authorized">
+          <p>Your profile is Unverified.
+            <a (click)="getOTP()">Click Here</a> to get OTP and verify</p>
+          <div *ngIf="otpReceived" class="row otpSection">
+            <p>An OTP '{{otp.reason}}' sent to your registered mobile {{profile.mobileNumber}}</p>
+            <input class="otp-input" type="text" [(ngModel)]="otpValue" [ngModelOptions]="{standalone: true}" (ngModelChange)="validateOTp()"
+              placeholder="Enter OTP" />
+          </div>
+        </aside>
+        <aside class="profile-status" *ngIf="authorized">
+          <p>Your profile is verified.</p>
+        </aside>
+      </section>
+    </div>
+
+    <div class="col-8 col-md-9 col-sm-12">
+      <section class="panel-profile">
+        <div *ngIf='!isEdit'>
+          <h5 class="section-title">Profile Details</h5>
+          <div class="data-field">
+            <label>First Name:</label>
+            <span>{{profile.displayName}}</span>
+          </div>
+          <div class="data-field">
+            <label>Last Name:</label>
+            <span>{{profile.lastName}}</span>
+          </div>
+          <div class="data-field">
+            <label>Age Range:</label>
+            <span>{{ageRange[profile.ageRange]}}</span>
+          </div>
+          <div class="data-field">
+            <label>Gender:</label>
+            <span>{{gender[profile.gender]}}</span>
+          </div>
+          <div class="data-field">
+            <label>Address:</label>
+            <span>{{profile.address}}</span>
+          </div>
+          <div class="data-field">
+            <label>City:</label>
+            <span>{{profile.city}}</span>
+          </div>
+          <div class="data-field">
+            <label>State:</label>
+            <span>{{profile.state}}</span>
+          </div>
+          <div class="data-field">
+            <label>Pincode:</label>
+            <span>{{profile.pincode}}</span>
+          </div>
+          <div class="data-field">
+            <label>Mobile:</label>
+            <span>{{profile.mobileNumber}}</span>
+          </div>
+        </div>
+
+        <div *ngIf='isEdit'>
+          <h5 class="section-title" *ngIf="!authorized">Create Profile</h5>
+          <h5 class="section-title" *ngIf="authorized">Edit Profile</h5>
+
+          <form novalidate [formGroup]="myform">
+            <div class="form-field">
+              <label>First Name</label>
+              <input type="text" class="form-control" formControlName="firstName" required placeholder="First Name">
+            </div>
+            <div class="form-field">
+              <label>Last Name</label>
+              <input type="text" class="form-control" formControlName="lastName" required placeholder="Last Name">
+            </div>
+            <div class="form-field">
+              <label>Age Range</label>
+              <select class="form-control" formControlName="ageRange" required>
+                <option *ngFor="let range of ageRange" [value]="range">
+                  {{range}}
+                </option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label>Gender</label>
+              <select class="form-control" formControlName="gender" required>
+                <option *ngFor="let gen of gender" [value]="gen">
+                  {{gen}}
+                </option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label>Address</label>
+              <input type="text" class="form-control" formControlName="address" required placeholder="Address">
+            </div>
+            <div class="form-field">
+              <label>City</label>
+              <input type="text" class="form-control" formControlName="city" required placeholder="City">
+            </div>
+            <div class="form-field">
+              <label>State</label>
+              <input type="text" class="form-control" formControlName="state" required placeholder="State">
+            </div>
+            <div class="form-field">
+              <label>Pincode</label>
+              <input type="text" class="form-control" formControlName="pincode" required placeholder="Pincode">
+            </div>
+            <div class="form-field">
+              <label>Mobile</label>
+              <input type="text" class="form-control" formControlName="mobileNumber" required placeholder="Mobile Number">
+            </div>
+
+          </form>
+          <div class="checkbox-inline profile-agree">
+            <input type="checkbox" id="agree" [(ngModel)]="termsAgreement" />
+            <label for="agree">I agree with the
+              <a href="#">terms and conditions.</a>
+            </label>
+          </div>
+
+          <div class="btn-group">
+            <button id="saveProfile" type="button" class="btn btn-secondary" [disabled]="!myform.valid || !termsAgreement || !validOtp"
+              (click)="saveProfile()">Save Profile</button>
+            <button type="button" class="btn btn-secondary btn-inverse" (click)="resetForm($event)">Reset Form</button>
+            <button type="button" class="btn btn-secondary btn-inverse" (click)="toggleEdit()">Cancel</button>
+          </div>
+
+        </div>
+      </section>
+    </div>
+
+  </div>
+
+</div>

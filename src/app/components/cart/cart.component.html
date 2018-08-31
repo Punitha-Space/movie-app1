@@ -1,0 +1,89 @@
+<!-- Section - Payment -->
+<div *ngIf="!isOfferSection && profile" class="panel-pay">
+
+  <div class="row no-gutter">
+    <div class="col-4">
+      <div class="poster" [ngStyle]="{ 'background-image': 'url(' + selectedMovie.imagePortraitUrl[0] + ')'}"></div>
+    </div>
+    <div class="col-8">
+      <div *ngIf="showAlert" class="alert error">{{purchaseAlertMessage}}</div>
+      <div class="pay-summary">
+        <div class="info">
+          <h5>{{selectedMovie.title[0]}}</h5>
+          <p>{{selectedMovie.genre[0].toString()}} | {{selectedMovie.certificate}} | {{selectedMovie.duration}} min</p>
+        </div>
+        <p class="panel-promo" *ngIf="!offerApplied">
+          <small class="note">Do you have any discount copoun ?
+            <a class="btn-link" (click)="viewOffers()">Apply Coupon</a>
+          </small>
+        </p>
+        <p class="panel-promo" *ngIf="offerApplied">
+          <small class="note">Offer Applied : {{selectedOffer.code}}
+            <a class="btn-link" (click)="removeOffer()">Remove</a>
+          </small>
+        </p>
+        <table>
+          <tr>
+            <th>Price</th>
+            <td>&#8377;{{selectedMovie.videotype}}/-</td>
+          </tr>
+          <tr style="color: #D41E29;" *ngIf="offerCost">
+            <th>Discount</th>
+            <td>&#8377;( {{offerCost}} )</td>
+          </tr>
+          <tr style="color: #D41E29;" *ngIf="offerCashback">
+            <th>Cashback</th>
+            <td>&#8377;( {{offerCashback}} )</td>
+          </tr>
+          <tr>
+            <th>Taxes</th>
+            <td>
+              &#8377;{{selectedMovie.tax}}/-
+              <small class="note">As per Govt of India policy, GST 18% will be applicable</small>
+            </td>
+          </tr>
+          <tr>
+            <th>To Pay</th>
+            <td>&#8377;{{totalCost}}/-</td>
+          </tr>
+        </table>
+        <div class="btn-group">
+          <button class="btn btn-secondary" [disabled]="createProfile" (click)="purchaseMovie()">Proceed To Pay</button>
+          <button class="btn btn-secondary" *ngIf="createProfile" (click)="navigateCreateProfile()">Create Profile</button>
+        </div>
+        <div class="disclaimer">
+          <p>Note: By continuing, you agree to Terms of Service - C2H and Privacy Notice.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Section - Promo Offers -->
+<div *ngIf="isOfferSection" class="panel-offers">
+  <div *ngIf="showAlert" class="row">
+    <div class="col-12">
+      <div class="alert error">{{alertMessage}}</div>
+    </div>
+  </div>
+  <div class="card-deck">
+    <section class="card" *ngFor="let offer of offers">
+      <div class="card-info">
+        <span class="radio-inline mode">
+          <input type="radio" id="{{offer.code}}" name="coupon" [value]="offer.code" (change)="selectOffer(offer)" />
+          <label for="{{offer.code}}">{{offer.code}}</label>
+        </span>
+        <p class="card-text">{{offer.desc}}</p>
+      </div>
+      <img class="card-img-top" src="{{offer.imageUrl[0]}}" alt="Card image cap" />
+    </section>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="btn-group" style="padding: 0 12px;">
+        <button class="btn btn-secondary" (click)="applyOffer()">Apply</button>
+        <button class="btn btn-secondary btn-inverse" (click)="isOfferSection=!isOfferSection">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>

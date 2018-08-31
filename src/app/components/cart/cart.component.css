@@ -1,0 +1,87 @@
+.panel-pay {
+  width: 100%;
+  max-width: 960px;
+  height: 400px;
+  margin: 0 auto;
+  background: #fafafa;
+}
+.panel-pay .poster {
+  display: inline-block;
+  width: 100%;
+  height: 400px;
+  background-size: cover;
+}
+.panel-pay .pay-summary {
+  position: relative;
+  padding: 20px;
+}
+.panel-pay .pay-summary .info {
+  position: relative;
+  margin-bottom: 12px;
+}
+.pay-summary .info h5 {
+  color: #D41E29;
+  font-size: 2rem;
+  font-weight: 600;
+}
+.pay-summary .info p {
+  font-size: 13px;
+  line-height: 21px;
+  margin-bottom: 10px;
+}
+.pay-summary .note {
+  display: block;
+  font-size: 11px;
+  line-height: 18px;
+}
+.pay-summary table {
+  margin: 15px 0;
+  font-size: 14px;
+  line-height: 21px;
+}
+.pay-summary th,
+.pay-summary td {
+  text-align: left;
+  width: 50%;
+}
+.pay-summary th {
+  
+}
+.pay-summary .disclaimer {
+  position: relative;
+  margin-top: 12px;
+}
+.disclaimer p {
+  font-size: 11px;
+}
+
+.panel-offers {
+  background-color: #fff;
+  padding: 24px 0;
+}
+.panel-offers .card-deck {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.panel-offers .card {
+  position: relative;
+  flex: 0 0 50%;
+  height: 240px;
+  padding: 0 12px;
+  margin: 12px 0;
+}
+.panel-offers .card-img-top {
+  max-width: 100%;
+  height: 180px;
+  object-fit: contain;
+}
+.panel-offers .card-text {
+  font-size: 13px;
+  line-height: 21px;
+  margin-bottom: 10px;
+}
+.panel-offers .mode {
+  font-size: 13px;
+}

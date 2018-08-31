@@ -1,0 +1,8 @@
+<div class="toastr">
+  <aside  *ngFor="let message of messages | async | reverse">
+    <div class="notification" [ngClass]="{'toast-info': message.style=='info', 'toast-danger': message.style=='danger', 'toast-success': message.style=='success', 'toast-warning': message.style=='warning'}">
+      {{message.content}}
+      <button class="delete" (click)="dismiss(message.$key)"></button>
+    </div>
+  </aside>
+</div>

@@ -1,0 +1,12 @@
+<div class="wrapper content-all-movies">
+  <div class="container">
+    
+    <section class="movies-base">
+      <article class="movie-card" *ngFor="let m of allMovies" (click)="gotoMoviePage(m)">
+        <img [src]="m.imagePortraitUrl[0]" />
+        <h5 class="movie-title">{{m.title[0]}}</h5>
+      </article>
+    </section>
+
+  </div>
+</div>

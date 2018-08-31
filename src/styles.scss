@@ -1,0 +1,51 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import 'intl-tel-input/build/css/intlTelInput.css';
+.chevron {
+    color: #D41E29;
+}
+
+.carousel {
+    background: #2f4357;
+}
+
+.carousel .item {
+    min-height: 280px;
+    /* Prevent carousel from being distorted if for some reason image doesn't load */
+}
+
+.carousel .item img {
+    margin: 0 auto;
+    /* Align slide image horizontally center */
+}
+
+.bs-example {
+    margin: 20px;
+}
+
+.dark {
+    background-color: #13151A;
+}
+
+body {
+    background-color: #1F2129;
+    font-family: "Proxima Nova";
+}
+
+#carousel-container {
+    width: 100%;
+    margin: 5em auto;
+    padding: 0;
+    background: #fff;
+}
+
+.items {
+    max-width: 300px;
+}
+
+.arrows {
+    margin: 20px;
+    width: 40px;
+    height: 40px;
+    color: #ffffff;
+}

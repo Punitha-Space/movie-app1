@@ -1,0 +1,30 @@
+<div
+  ng2-carouselamos
+  class="slides-wrapper"
+  [items]="movies"
+  [width]="1200"
+  [$prev]="prev"
+  [$next]="next"
+  [$item]="item"
+>
+</div>
+
+
+<ng-template #prev>
+  <span id="left">
+    <i class="fa fa-chevron-left"></i>
+  </span>
+</ng-template>
+<ng-template #next>
+  <span id="right">
+    <i class="fa fa-chevron-right"></i>
+  </span>
+</ng-template>
+<ng-template #item let-item let-i="index">
+  <div class="items">
+    <li>
+      <app-card [movieCard]="item" [showChevron]='true'></app-card>
+    </li>
+  </div>
+
+</ng-template>

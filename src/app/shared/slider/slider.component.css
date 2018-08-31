@@ -1,0 +1,14 @@
+.carousel-image{
+  max-height: 400px;
+  width: 100%;
+}
+
+.truncate-text{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.carousel{
+  cursor: pointer;
+}

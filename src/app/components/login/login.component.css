@@ -1,0 +1,108 @@
+.intro1 {
+  position: relative;
+  width: 100%;
+  height: 640px;
+  background-image: url('../../../assets/images/bg-posters.jpg');
+  background-size: contain;
+}
+.intro1 .mask {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0,0,0,0.8);
+}
+.intro1 .inner {
+  position: relative;
+  width: 100%;
+  height: inherit;
+  padding: 30px 60px;
+}
+.intro1 .inner .highlight {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #FFF;
+  font-family: 'Proxima Nova';
+  font-weight: 700;
+  font-size: 54px;
+  line-height: 60px;
+}
+.highlight .login-fb,
+.highlight .login-goo {
+  outline: none;
+  border: none;
+  padding: 15px 30px;
+  font-size: 18px;
+  font-family: "Proxima Nova";
+  color: #FFF;
+  border-radius: 8px;
+  cursor: pointer;
+  line-height: normal;
+}
+.highlight .login-fb {
+  background-color: #3b5998;
+}
+.highlight .login-goo {
+  background-color: #d34836;
+}
+.intro2 {
+  width: 100%;
+  height: 200px;
+  background-color: #141414;
+}
+.intro2 .inner {
+  margin: 0 auto;
+  max-width: 960px;
+}
+.intro2 .icon {
+  color: #FFF;
+  fill: #FFF;
+  height: 49px;
+}
+.intro2 .intro-mark {
+  padding: 30px 0;
+}
+.intro2 .icon-cell {
+  margin-bottom: 10px;
+}
+.intro2 .mark-text {
+  color: #FFF;
+  font-family: 'Proxima Nova';
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+}
+.intro3 {
+  background-color: #141414;
+  padding: 30px 0;
+}
+.intro3 .footer-nav {
+  float: right;
+}
+.intro3 .footer-nav li {
+  display: inline-block;
+  height: 24px;
+  margin: 0 15px;
+}
+.intro3 .footer-nav li a {
+  display: block;
+  height: 24px;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 24px;
+  color: #8e95a5;
+}
+.intro3 .footer-nav li a:hover {
+  color: #FFF;
+  text-decoration: underline;
+}
+.intro3 .copy {
+  font-size: 13px;
+  font-weight: 100;
+  line-height: 25px;
+  color: #8e95a5;
+}

@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="gallery">
+    <div *ngIf="moviesExist" id="carousel-container">
+      <div class="widget widget-genres">
+        <h2 class="widget-title">Gallery</h2>
+        <ul class="genre-banners">
+          <app-image-carousel [movies]="downloadedMovies"></app-image-carousel>
+        </ul>
+      </div>
+    </div>
+    <div class="text-center page-not-found-text" *ngIf="!moviesExist">
+        <h3>You do not have any movies downloaded.</h3>
+        <h4><a href="javascript:void;" (click)="goHome()">Purchase Movies</a></h4>
+    </div>
+  </div>
+</div>

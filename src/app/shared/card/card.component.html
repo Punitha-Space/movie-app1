@@ -1,0 +1,6 @@
+<div class="movie-card" (click)="navigateToPage(movieCard)">
+  <img [src]="movieCard.imagePortraitUrl[0]"/>
+  <div class="banner-title">{{movieCard.title[0]}}
+    <i *ngIf='showChevron' class="chevron fa fa-chevron-right"></i>
+  </div>
+</div>

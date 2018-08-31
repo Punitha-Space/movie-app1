@@ -1,0 +1,36 @@
+.main-footer {
+  background-color: #13151A;
+  padding: 30px 0;
+  color: #8e95a5;
+}
+
+.footer-nav {
+  float: right;
+}
+
+.footer-nav li {
+  display: inline-block;
+  height: 24px;
+  margin: 0 15px;
+}
+
+.footer-nav li a {
+  display: block;
+  height: 24px;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 24px;
+  color: #8e95a5;
+}
+
+.footer-nav li a:hover {
+  color: #FFF;
+  text-decoration: underline;
+}
+
+.copy {
+  font-size: 13px;
+  font-weight: 100;
+  line-height: 25px;
+  color: #8e95a5;
+}

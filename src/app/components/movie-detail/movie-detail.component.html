@@ -1,0 +1,62 @@
+<div class="modal-container" *ngIf="movieBuy">
+  <div class="modal-body">
+    <app-cart [selectedMovie]="selectedMovie" (purchased)="onPurchased($event)"></app-cart>  
+    <button class="modal-close" (click)="movieBuy = false">
+      <i class="fa fa-2x fa-times"></i>
+    </button>
+  </div>
+</div>
+
+<div class="wrapper content-movie">
+  <div class="movie-master">
+    <!-- Cover Image -->
+    <div class="movie-intro" [ngStyle]="{ 'background-image': 'url(' + movie.imageLandscapeUrl[0] + ')'}">
+      <div class="intro-cover"></div>
+    </div>
+
+    <!-- Movie info & Add to Cart & Play -->
+    <div class="movie-info">
+      <h2 class="movie-title">{{movie.title[0]}}</h2>
+      <p class="stats">
+        <span class="year">{{movie.year}}</span> |
+        <span class="cert">{{movie.certificate}}</span> |
+        <span class="genre">{{movie.genre[0].toString()}}</span> |
+        <span class="duration">{{movie.duration}} min</span> |
+        <span class="rating">{{movie.ratingCritic}} / 10</span>
+      </p>
+      <p class="plot">{{movie.plot[0]}}</p>
+
+      <div class="buy-wrapper">
+        <div class="select-video">
+          <span class="radio-inline mode">
+            <input type="radio" id="sd" name="videotype" [value]="movie.purchaseCostHD" (change)="onVideoTypeChange(movie.purchaseCostHD)" checked="checked"/>
+            <label for="sd">HD - &#8377;{{movie.purchaseCostHD}}</label>
+          </span>
+          <span class="radio-inline mode">
+            <input type="radio" id="hd" name="videotype" [value]="movie.purchaseCostSD" (change)="onVideoTypeChange(movie.purchaseCostSD)"/>
+            <label for="hd">SD - &#8377;{{movie.purchaseCostSD}}</label>
+          </span>
+          <span *ngIf="movie.purchaseCostAdvHD > 0" class="radio-inline mode">
+            <input type="radio" id="sdAds" name="videotype" [value]="movie.purchaseCostAdvHD" (change)="onVideoTypeChange(movie.purchaseCostAdvHD)"/>
+            <label for="sdAds">HD Ads - &#8377;{{movie.purchaseCostAdvHD}}</label>
+          </span>
+          <span *ngIf="movie.purchaseCostAdvSD > 0" class="radio-inline mode">
+            <input type="radio" id="hdAds" name="videotype" [value]="movie.purchaseCostAdvSD"  (change)="onVideoTypeChange(movie.purchaseCostAdvSD)"/>
+            <label for="hdAds">SD Ads - &#8377;{{movie.purchaseCostAdvSD}}</label>
+          </span>
+        </div>
+
+        <div class="buy-now">
+          <button *ngIf="!isPurchased" (click)="openCart(content)" class="btn btn-primary">
+            <span class="btn-icon"><i class="fa fa-credit-card"></i></span> <span> Buy Now</span>
+          </button>
+          <button *ngIf="isPurchased" class="btn btn-primary">
+            <span class="btn-icon"><i class="fa fa-credit-card"></i></span> <span> Play Movie</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>

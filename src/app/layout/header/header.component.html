@@ -1,0 +1,35 @@
+<!-- Header -->
+<header class="main-header">
+  <div class="row">
+    <div class="col-9 col-sm-12">
+      <nav class="main-nav">
+        <ul class="navbar">
+          <li class="nav-brand">
+            <a class="avatar" [routerLink]="['home']"><img src="assets/images/logo2.png"/></a>
+          </li>
+          <li class="nav-item active">
+            <a [routerLink]="['home']">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a [routerLink]="['gallery']">Gallery</a>
+          </li>
+          <li class="nav-item">
+            <a [routerLink]="['movies']">Movies</a>
+          </li>
+          <li class="nav-item">
+            <a [routerLink]="['profile']">My Account</a>
+          </li>
+          <li class="nav-item">
+            <a (click)="signOut()">Sign Out</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="col-3 col-sm-12">
+      <form class="finder">
+        <input class="" type="text" placeholder="Search Movie Here" aria-label="Search">
+        <button class="dosearch" type="submit"><i class="fa fa-search"></i></button>
+      </form>
+    </div>
+  </div>
+</header>

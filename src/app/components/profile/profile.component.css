@@ -1,0 +1,75 @@
+.profile-container {
+    margin: 60px auto;
+}
+
+.panel-profile-status {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: #F1F2F3;
+    padding: 24px;
+}
+
+.panel-profile-status .profile-status {
+    margin: 24px 0;
+}
+
+.panel-profile-status .profile-status p {
+    font-size: 13px;
+    line-height: 21px;
+    font-weight: 300;
+}
+
+.panel-profile-status .profile-status a {
+    cursor: pointer;
+    color: #D41E29;
+}
+
+.panel-profile {
+    background-color: #FAFAFA;
+    padding: 24px;
+}
+
+.panel-profile .section-title {
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 700;
+    margin-bottom: 9px;
+    color: #D41E29;
+}
+
+.profile-agree {
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.data-field {
+  display: flex;
+  margin-bottom: 9px;
+}
+
+.data-field label,
+.data-field span {
+  flex: 0 0 50%;
+  font-size: 14px;
+  line-height: 21px;
+  margin-bottom: 6px;
+}
+
+.otpSection {
+  margin-left: 0px;
+  margin-top: 20px;
+}
+
+.otp-input {
+  padding: 8px;
+  border-radius: 3px;
+  border: 1px solid #c9cbd0;
+  margin-top: 10px;
+}
+
+#saveProfile[disabled] {
+  background-color: #FF85A1;
+  color: #ffffff;
+  cursor: not-allowed;
+}

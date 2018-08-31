@@ -1,0 +1,49 @@
+<!-- Hero slider for highlights -->
+<section class="hero" *ngIf="hero">
+  <ngx-siema [options]="options">
+    <ngx-siema-slide *ngFor="let item of hero" class="hero-slide" (click)="getMovieDetails(item)">
+      <img class="hero-image" [src]="item.imageLandscapeUrl[0]" alt='{{item.title[0]}}' />
+      <div class="hero-content">
+        <h5>{{item.title[0]}}</h5>
+        <p>{{item.certificate}} | {{item.year}} | {{item.duration}} min | {{item.ratingCritic}}/10</p>
+        <p>{{item.genre[0]}}</p>
+      </div>
+    </ngx-siema-slide>
+  </ngx-siema>
+  <button type="button" (click)="prev()" class="hero-prev">
+    <i class="fa fa-chevron-left"></i>
+  </button>
+  <button type="button" (click)="next()" class="hero-next">
+    <i class="fa fa-chevron-right"></i>
+  </button>
+</section>
+
+<!-- Home page body -->
+<div class="container">
+
+  <!-- Widget: Genre banners -->
+  <div *ngIf="config.configureScreen.showGenre" id="carousel-container">
+    <div class="widget widget-genres">
+      <h2 class="widget-title">Genre</h2>
+      <ul class="genre-banners">
+        <app-image-carousel [movies]="genres"></app-image-carousel>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Widget: Latest items -->
+  <section *ngIf="latest" class="widget widget-latest">
+    <h2 class="widget-title">Latest</h2>
+    <ul class="movie-tiles">
+      <app-image-carousel [movies]="latest"></app-image-carousel>
+    </ul>
+  </section>
+
+  <!-- Widget: Trending/Recommended -->
+  <section *ngIf="trending" class="widget widget-trending">
+    <h2 class="widget-title">Trending</h2>
+    <ul class="movie-tiles">
+      <app-image-carousel [movies]="trending"></app-image-carousel>
+    </ul>
+  </section>
+</div>

@@ -1,0 +1,6 @@
+<app-header *ngIf="authenticated || (isLoggedIn$ | async)"></app-header>
+<ng4-loading-spinner> </ng4-loading-spinner>
+<div class="wrapper">
+  <router-outlet></router-outlet>
+</div>
+<app-footer *ngIf="authenticated || (isLoggedIn$ | async)"></app-footer>

@@ -1,0 +1,16 @@
+<form id="paymentForm" action="{{formDataPurchase.redirectUrl}}" method="{{formDataPurchase.redirectMethod}}" type="hidden">
+  <div style="display:none">
+    <input name="key" type="text" type="hidden" value="{{formDataPurchase.redirectData.key}}" />
+    <input name="txnid" type="text" type="hidden" value="{{formDataPurchase.redirectData.txnid}}" />
+    <input name="amount" type="text" type="hidden" value="{{formDataPurchase.redirectData.amount}}" />
+    <input name="productinfo" type="text" type="hidden" value="{{formDataPurchase.redirectData.productinfo}}" />
+    <input name="service_provider" type="text" type="hidden" value="{{formDataPurchase.redirectData.service_provider}}" />
+    <input name="surl" type="text" type="hidden" value="{{formDataPurchase.redirectData.surl}}" />
+    <input name="furl" type="text" type="hidden" value="{{formDataPurchase.redirectData.furl}}" />
+    <input name="hash" type="text" type="hidden" value="{{formDataPurchase.redirectData.hash}}" />
+    <input name="firstname" type="text" type="hidden" value="{{formDataPurchase.redirectData.firstname}}" />
+    <input name="email" type="text" type="hidden" value="{{formDataPurchase.redirectData.email}}" />
+    <input name="phone" type="text" type="hidden" value="{{formDataPurchase.redirectData.phone}}" />
+    <input name="udf1" type="text" type="hidden" value="{{formDataPurchase.redirectData.udf1}}" />
+  </div>
+</form>
